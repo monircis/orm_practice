@@ -40,8 +40,15 @@ class User extends Authenticatable
         return $this->hasOne(Address::class);
     }
 
+    public function addresses(){
+        return $this->hasMany(Address::class,'user_id','id');
+    }
+
     public function posts(){
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class,'user_id','id');
 //        return $this->hasMany(Post::class,'other_foreign_keyname');
     }
+
+
+
 }

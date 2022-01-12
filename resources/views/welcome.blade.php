@@ -80,6 +80,14 @@
             @endif
                 <table class="table" border="1">
                   <tbody>
+                  $users
+{{--                  @foreach($users as $user)--}}
+{{--                      <tr >--}}
+{{--                          <th>Name: {{$user->address}}</th>--}}
+{{--                          <th>Name: {{$user->user->name}}</th>--}}
+{{--                          <td>Address:  @if($user->address) {{$user->address->address}} @endif  </td>--}}
+{{--                      </tr>--}}
+{{--                  @endforeach--}}
                     @foreach($users as $user)
                         <tr >
                             <th>Name: {{$user->name}}</th>
