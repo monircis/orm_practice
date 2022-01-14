@@ -27,7 +27,7 @@
                     <div class="panel-heading">Name: {{ $post->user->name }}</div>
                     <div class="panel-heading">Tags:
                         @foreach($post->tags as $tag)
-                            <span class="badge">{{ $tag->name }}</span>
+                            <span class="badge">{{ $tag->name }} </span> Date: {{ $tag->pivot->created_at }}
                         @endforeach
                     </div>
                 </div>

@@ -23,6 +23,10 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id')->withTimestamps();
+        return $this->belongsToMany(Tag::class, 'post_tag', 'post_id', 'tag_id')
+            ->using(PostTag::class)
+            ->withTimestamps()
+            ->withPivot('status');
+//        ->withPivot('status'); is  used  for show data in relation when fetch
     }
 }

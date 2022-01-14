@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','project_id',
     ];
 
     /**
@@ -36,6 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function Project(){
+        return $this->belongsTo(Project::class);
+    }
+    public function Tasks(){
+        return $this->hasMany(Task::class);
+    }
+
     public function address(){
         return $this->hasOne(Address::class);
     }
